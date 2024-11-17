@@ -1,10 +1,21 @@
-const nameProduct = 'Стиральная машина';
-const countProduct = 3;
-const categoryProduct = 'Бытовая техника';
-const costProduct = 2000;
+'use strict'
 
-// Задание №1
-console.log(nameProduct);
+{
+  const item = 'smart проектор philips';
+  const count = 15;
+  const category = 'видео техника';
+  const price = 1200;
 
-// Задание №2
-console.log(costProduct*countProduct);
+  console.log(item);
+  console.log(`общая сумма товара: ${count * price}`);
+}
+
+{
+    const item = 'Мягкая игрушка "Миньон"';
+    const count = 12;
+    const category = 'Детские товары';
+    const price = 100;
+  
+    console.log(item);
+    console.log(`общая сумма товара: ${count * price}`);
+}
