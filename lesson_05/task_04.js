@@ -2,23 +2,20 @@
 
 {
     const calcute = (totalSum, countItem, promoCode) =>{
-        let discountTenCount = 0;
-        let discountMoreThreethousand = 0;
-        let discountPromoCode = 0;
+        let result = totalSum;
 
         if(countItem > 10){
-            discountTenCount = totalSum * 0.03;
+            result -= result * 0.03;
         };
-        if(totalSum > 30000){
-            discountMoreThreethousand = (totalSum - 30000) * 0.15;
+        if(result > 30000){
+            result -= (result - 30000) * 0.15;
         };
         if(promoCode === 'METHED'){
-            discountPromoCode = totalSum * 0.1;
-        } else if (promoCode === 'G3H2Z1' 
-                    && totalSum - discountTenCount - discountMoreThreethousand > 2000){
-                        discountPromoCode = 500;
+            result -= result * 0.1;
+        } else if (promoCode === 'G3H2Z1' && result > 2000){
+            result -= 500;
         };
-        return totalSum - discountTenCount - discountMoreThreethousand - discountPromoCode;
+        return result;
     };
-    console.log(calcute(2300, 11, 'G3H2Z1'));
+    console.log(calcute(50000, 11, 'G3H2Z1'));
 }
