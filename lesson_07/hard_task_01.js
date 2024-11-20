@@ -13,10 +13,11 @@
       ];
     const getAveragePriceGoods = (arr) =>{
         let sum = 0;
+        let count = 0;
         for (const elem of arr){
-                sum += elem[1] / elem[0];
-        } return Math.round(sum / arr.length); 
-
+                sum += elem[1];
+                count += elem[0];
+        } return Math.round(sum / count); 
     };
     console.log(getAveragePriceGoods(allСashbox))
 }
