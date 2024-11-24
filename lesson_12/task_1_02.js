@@ -4,7 +4,11 @@
   const arr = [];
   const generateArray = (arr) => {
       arr.push(Math.round(Math.random() * 10));
-      if(arr.length < 50){
+      let sum = arr.reduce((acc, item) => {
+        return acc + item}
+        , 0);
+      console.log(sum);  
+      if(sum < 50){
           generateArray(arr);                                  
       } 
       return arr;        

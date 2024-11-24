@@ -12,16 +12,14 @@
       inputNumber = Number(inputNumber);        
       if (Number.isNaN(inputNumber)) {
           alert('Введи число!');
-          getNumber();
       } else if (inputNumber < hiddenNumber) {
           alert('Больше!');
-          getNumber();
       } else if (inputNumber > hiddenNumber) {
           alert('Меньше!');
-          getNumber();
       } else if (inputNumber === hiddenNumber) {
-          alert('Правильно!');            
-      }                           
+          return alert('Правильно!');            
+      } 
+      getNumber();                          
   }
   getNumber();
 }
