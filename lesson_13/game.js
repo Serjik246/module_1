@@ -49,16 +49,20 @@
       let inputValue = prompt(`${lang[0]}, ${lang[1]}, ${lang[2]}?`, String());
       if (inputValue === null) {
         if (confirm(getFigure(lang).isSure)) {
-          return console.log('close');
+          return alert(`${getFigure(lang).total}: \n${getFigure(lang).computer}: ${result.computer} \n${getFigure(lang).player}: ${result.player}`);
         };
         return start();
       };
-      inputValue = inputValue[0]?.toLowerCase();
+      if (!inputValue) {
+        return start();
+      };
+      const inputValueLength = inputValue.length;
+      inputValue = inputValue?.toLowerCase();
       const randomIndex = getRandomIntInclusive(0, 2);
       const randomElement = lang[randomIndex];
-
       const inputElement = lang.find(
-        item => inputValue === item[0].toLowerCase());
+        item => inputValue ===
+        item.substring(0, inputValueLength).toLowerCase());
       const inputIndex = lang.indexOf(inputElement);
       console.log(inputElement, randomElement);
       console.log(inputIndex, randomIndex);
@@ -75,9 +79,10 @@
           result.computer += 1;
           alert(`${output} \n${getFigure(lang).defeat}`);
         };
-
         if (!confirm(getFigure(lang).isContinue)) {
-          return alert(`${getFigure(lang).total}: \n${getFigure(lang).computer}: ${result.computer} \n${getFigure(lang).player}: ${result.player}`);
+          if (confirm(getFigure(lang).isSure)) {
+            return alert(`${getFigure(lang).total}: \n${getFigure(lang).computer}: ${result.computer} \n${getFigure(lang).player}: ${result.player}`);
+          };
         };
       }
       start();
